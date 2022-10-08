@@ -1,9 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
+import NavSidebar from "./Components/NavSidebar";
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NavSidebar />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
