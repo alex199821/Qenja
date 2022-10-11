@@ -10,7 +10,7 @@ const Wrapper = styled.nav`
   background: var(--primary);
   border-bottom: 1px solid white;
 
-  .nav-container {
+  .navContainer {
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -18,7 +18,7 @@ const Wrapper = styled.nav`
     padding-left: 32px;
     padding-right: 32px;
   }
-  .cart-container {
+  .cartContainer {
     display: flex;
     justify-content: flex-end;
   }
@@ -33,41 +33,11 @@ const Wrapper = styled.nav`
     background: transparent;
     border: 0;
   }
-  .language-select {
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    background: var(--primary);
-    border: 0;
-  }
   .p,
   .links {
     font-size: 18px;
-    color: white;
+    color: var(--white);
     text-decoration: none;
-  }
-  .search-bar {
-    color: white;
-    background-color: transparent;
-    border: none;
-    font-size: 18px;
-    width: 80px;
-    margin-top: 2px;
-  }
-  .search-bar::placeholder {
-    color: white;
-  }
-  .search-bar:focus::placeholder {
-    font-size: 14px;
-  }
-  .search-bar:focus {
-    padding: 10px;
-    outline: none;
-    font-size: 14px;
-    width: 12rem;
-    border: 1px solid white;
-    border-radius: 14px;
   }
   .cart {
     display: flex;
@@ -88,18 +58,20 @@ const Wrapper = styled.nav`
     border: 0;
   }
   @media (max-width: 1300px) {
+    border-bottom: 0;
+
     .searchIcon,
     .burger {
       display: flex;
     }
-    .nav-container {
+    .navContainer {
       padding-right: 16px;
       padding-left: 16px;
       gap: 0;
     }
-    .nav-container>.links, 
+    .navContainer > .links,
     .search-bar,
-    .language-select {
+    .languageSelect {
       display: none;
     }
   }

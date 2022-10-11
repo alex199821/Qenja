@@ -1,4 +1,6 @@
-const LanguageSelect = () => {
+import { LanguageSelectWrapper } from "../assets/wrappers/Components";
+
+const LanguageSelect = ({ props }) => {
   const options = [
     { value: "EN", input: "EN" },
     { value: "GE", input: "GE" },
@@ -9,16 +11,16 @@ const LanguageSelect = () => {
     console.log("Change Handled");
   };
   return (
-      <select className="language-select" onChange={handleChange}>
-        {options.map((option, index) => {
-          const { value, input } = option;
-          return (
-            <option key={index} value={value}>
-              {input}
-            </option>
-          );
-        })}
-      </select>
+    <LanguageSelectWrapper onChange={handleChange} className={props}>
+      {options.map((option, index) => {
+        const { value, input } = option;
+        return (
+          <option key={index} value={value}>
+            {input}
+          </option>
+        );
+      })}
+    </LanguageSelectWrapper>
   );
 };
 export default LanguageSelect;
