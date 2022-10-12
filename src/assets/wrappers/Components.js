@@ -57,7 +57,7 @@ export const SearchBar = styled.input`
     border: 1px solid white;
     border-radius: 14px;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     display: none;
   }
 `;
@@ -104,7 +104,7 @@ export const EmailSignupWrapper = styled.section`
     font-size: 28px;
     margin: 0;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -162,7 +162,7 @@ export const SubscibeFormWrapper = styled.form`
     padding: 10px 30px 10px 30px;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     width: 100%;
     p {
       margin-bottom: 16px;
@@ -217,7 +217,7 @@ export const MainLandingWrapper = styled.section`
       object-fit: cover;
     }
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     .mainLanding {
       flex-direction: column;
     }
@@ -244,30 +244,30 @@ export const MainLandingWrapper = styled.section`
 `;
 
 export const ImageCollectionWrapper = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* width: 100%;
   gap: 32px;
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 32px; */
   div {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    height: 100%;
+    height: 100%; */
     width: 100%; /* width of container */
-    aspect-ratio: 32/24;
+    /* aspect-ratio: 32/24;
     object-fit: cover;
     object-position: 100% 14.5%;
-    z-index: 1;
+    z-index: 1; */
   }
   img {
-    width: auto;
+    /* width: auto; */
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     gap: 16px;
     flex-direction: column;
     img {

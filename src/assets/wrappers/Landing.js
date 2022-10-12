@@ -17,13 +17,13 @@ const Wrapper = styled.section`
     p {
       width: 60%;
       color: var(--white);
-      font-size: 62px;
+      font-size: 42px;
       font-weight: 700;
-      line-height: 1.5;
+      line-height: 1.25;
     }
     b {
       background-image: url(${greenCircle});
-      background-size: 150px;
+      background-size: 95px;
       background-repeat: no-repeat;
       display: flex;
     }
@@ -43,7 +43,7 @@ const Wrapper = styled.section`
       object-fit: cover;
     }
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 16px;
@@ -51,15 +51,16 @@ const Wrapper = styled.section`
       flex-direction: column;
     }
     .mainLandingText {
-      width: 80%;
+      width: 100%;
       border: 0;
       p {
         font-size: 32px;
         width: 100%;
+        line-height: 1.5;
       }
       b {
         background-image: url(${greenCircle});
-        background-size: 70px;
+        background-size: 80px;
         background-repeat: no-repeat;
         display: flex;
       }

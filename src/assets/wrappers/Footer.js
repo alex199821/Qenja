@@ -76,7 +76,7 @@ export const Wrapper = styled.nav`
     text-decoration: none;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     padding-left: 15px;
     padding-right: 15px;
     img {

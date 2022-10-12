@@ -57,7 +57,7 @@ const Wrapper = styled.nav`
     background: transparent;
     border: 0;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     border-bottom: 0;
 
     .searchIcon,

@@ -15,7 +15,7 @@ const Wrapper = styled.section`
       color: var(--white);
       font-size: 62px;
       text-transform: uppercase;
-      width: 55%;
+      width: 100%;
       margin-top: 75px;
     }
     p {
@@ -65,8 +65,8 @@ const Wrapper = styled.section`
       padding-left: 100px;
       margin: 0;
       font-weight: 200;
-      width: 50%;
-      font-size: 20px;
+      width: 60%;
+      font-size: 16px;
       font-family: "Inter", sans-serif;
     }
     b {
@@ -74,7 +74,7 @@ const Wrapper = styled.section`
     }
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     .mainAboutSection {
       width: 100%;
       h1 {

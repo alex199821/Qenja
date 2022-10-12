@@ -10,7 +10,7 @@ const MainLanding = () => {
           </p>
         </div>
         <div className="mainLandingImage">
-          <img src={landingPageImg} />
+          <img src={landingPageImg} alt="LandingImage" />
         </div>
       </section>
     </MainLandingWrapper>

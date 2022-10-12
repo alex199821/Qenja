@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  //"d-flex position-relative w-100 h-100"
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .w-100 {
+export const Wrapper = styled.section`
+  margin-bottom: 30px;
+  .mainContainer {
+    // d-flex position-relative w-100 h-100
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .animationContainer {
     width: 100%;
   }
   .scrollerBackground {
@@ -14,7 +17,7 @@ export const Wrapper = styled.div`
     height: 101%;
     position: absolute;
     z-index: 1000;
-    clip-path: polygon(100% 0%, 100% 40%, 35% 100%, 0% 100%);
+    clip-path: polygon(100% 0%, 100% 60%, 60% 100%, 0% 100%);
   }
   .tiltedScrollingTextContainer {
     display: flex;
@@ -26,28 +29,46 @@ export const Wrapper = styled.div`
     width: 273%;
     padding: 1%;
     transform: rotate(-35deg);
-    background-color: red
+    background-color: #d9ec00;
   }
-
   .tiltedScrollingText {
-
-    animation: tiltedScrollingText 3s linear infinite;
+    flex-shrink: 0;
+    animation: tiltedScrollingText 60s linear infinite;
   }
+
   @keyframes tiltedScrollingText {
     from {
-      transform: translateX(-10%);
+      transform: translateX(-100%);
     }
     to {
       transform: translateX(0);
     }
   }
+
   .imageUnderScroller {
     height: 100%;
     width: 100%; /* width of container */
     aspect-ratio: 32/24;
     object-fit: cover;
-    object-position: 100% 100%;
+    object-position: 100% 12.5%;
     z-index: 1;
+  }
+
+  .scrollerBackshade1 {
+    position: absolute;
+    width: 101%;
+    height: 50%;
+    clip-path: polygon(65% 0, 100% 75%, 100% 67%);
+    background-color: white;
+    z-index: -100;
+  }
+  .scrollerBackshade2 {
+    position: absolute;
+    width: 75%;
+    height: 101%;
+    clip-path: polygon(0% 55%, 37.5% 100%, 45% 100%);
+    background-color: white;
+    z-index: -100;
   }
 `;
 

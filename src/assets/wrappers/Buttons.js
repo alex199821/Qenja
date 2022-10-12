@@ -22,7 +22,7 @@ export const BurgerButton = styled.button`
   width: 25px;
   height: 25px;
   border: none;
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     display: flex;
   }
 `;
@@ -37,7 +37,7 @@ export const SearchButton = styled.button`
   width: 25px;
   height: 25px;
   border: none;
-  @media (max-width: 1300px) {
+  @media (max-width: 769px) {
     display: flex;
   }
 `;
