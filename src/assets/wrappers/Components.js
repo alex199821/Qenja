@@ -244,32 +244,26 @@ export const MainLandingWrapper = styled.section`
 `;
 
 export const ImageCollectionWrapper = styled.section`
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* width: 100%;
-  gap: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding-top: 32px;
-  padding-bottom: 32px; */
-  div {
-    /* display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    height: 100%; */
-    width: 100%; /* width of container */
-    /* aspect-ratio: 32/24;
-    object-fit: cover;
-    object-position: 100% 14.5%;
-    z-index: 1; */
+  padding-bottom: 32px;
+  justify-content: space-between;
+  row-gap: 2vw;
+  .imageContainer {
+    width: 49%;
   }
   img {
-    /* width: auto; */
+    width: 100%;
   }
 
   @media (max-width: 769px) {
     gap: 16px;
     flex-direction: column;
+    .imageContainer {
+      width: 100%;
+    }
     img {
       width: 100%;
     }

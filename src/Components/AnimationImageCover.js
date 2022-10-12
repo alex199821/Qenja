@@ -3,30 +3,30 @@ import landingpagetable1 from "../assets/images/landingpagetable1.png";
 
 import {
   Wrapper,
-  BackshadeLeft,
-  BackshadeRight,
+  AnimationBackshadeLeft,
+  AnimationBackshadeRight,
 } from "../assets/wrappers/AnimationImageCover";
 
 const AnimationImageCover = ({ image }) => {
   return (
     <Wrapper>
       <div className="mainContainer">
-        <div class="scrollerBackshade1"></div>
-        <div class="scrollerBackshade2"></div>
-        <div class="animationContainer">
-          <div class="scrollerBackground">
-            <div class="tiltedScrollingTextContainer">
-              <p class="tiltedScrollingText">
+        <AnimationBackshadeLeft />
+        <AnimationBackshadeRight />
+        <div className="animationContainer">
+          <div className="animationBackground">
+            <div className="tiltedScrollingTextContainer">
+              <p className="tiltedScrollingText">
                 * Qenja Modern Ethno Clothes * Qenja Modern Ethno Clothes *
                 Qenja Modern Ethno Clothes * Qenja Modern Ethno Clothes
               </p>
-              <p class="tiltedScrollingText">
+              <p className="tiltedScrollingText">
                 * Qenja Modern Ethno Clothes * Qenja Modern Ethno Clothes *
                 Qenja Modern Ethno Clothes * Qenja Modern Ethno Clothes
               </p>
             </div>
           </div>
-          <img class="imageUnderScroller" src={image} alt="PLZWORK" />
+          <img className="imageUnderScroller" src={image} alt="PLZWORK" />
         </div>
       </div>
     </Wrapper>

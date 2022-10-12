@@ -23,7 +23,7 @@ const Wrapper = styled.section`
     }
     b {
       background-image: url(${greenCircle});
-      background-size: 95px;
+      background-size: 90px;
       background-repeat: no-repeat;
       display: flex;
     }

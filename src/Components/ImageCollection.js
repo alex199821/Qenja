@@ -7,19 +7,19 @@ import AnimationImageCover from "./AnimationImageCover";
 
 const ImageCollection = () => {
   return (
-    // <ImageCollectionWrapper>
-    //   <div>
-    //     <img src={landingpagetable1} />
-    //   </div>
-    //   <div>
-    //     <img src={landingpagetable3} />
-    //   </div>
-    //   <div>
-    //     <img src={landingpagetable2} />
-    //   </div>
-    // </ImageCollectionWrapper>
     <ImageCollectionWrapper>
-      <AnimationImageCover image={landingpagetable3} />
+      <div className="imageContainer">
+        <img src={landingpagetable1} />
+      </div>
+      <div className="imageContainer">
+        <AnimationImageCover image={landingpagetable3} />
+      </div>
+      <div className="imageContainer">
+        <img src={landingpagetable2} />
+      </div>
+      <div className="imageContainer">
+        <img src={landingpagetable4} />
+      </div>
     </ImageCollectionWrapper>
   );
 };

@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  margin-bottom: 30px;
   .mainContainer {
     // d-flex position-relative w-100 h-100
     display: flex;
     position: relative;
     width: 100%;
     height: 100%;
+    
   }
   .animationContainer {
     width: 100%;
   }
-  .scrollerBackground {
+  .animationBackground {
     width: 101%;
     height: 101%;
     position: absolute;
@@ -48,44 +48,29 @@ export const Wrapper = styled.section`
   .imageUnderScroller {
     height: 100%;
     width: 100%; /* width of container */
-    aspect-ratio: 32/24;
+    aspect-ratio: 34/24;
     object-fit: cover;
     object-position: 100% 12.5%;
     z-index: 1;
+    /* opacity: 0; */
   }
 
-  .scrollerBackshade1 {
-    position: absolute;
-    width: 101%;
-    height: 50%;
-    clip-path: polygon(65% 0, 100% 75%, 100% 67%);
-    background-color: white;
-    z-index: -100;
-  }
-  .scrollerBackshade2 {
-    position: absolute;
-    width: 75%;
-    height: 101%;
-    clip-path: polygon(0% 55%, 37.5% 100%, 45% 100%);
-    background-color: white;
-    z-index: -100;
-  }
 `;
 
-export const BackshadeLeft = styled.section`
+export const AnimationBackshadeRight = styled.section`
   position: absolute;
   width: 101%;
   height: 50%;
-  clip-path: polygon(65% 0, 100% 75%, 100% 67%);
+  clip-path: polygon(65% 0, 100% 85%, 100% 71%);
   background-color: white;
   z-index: -100;
 `;
 
-export const BackshadeRight = styled.section`
+export const AnimationBackshadeLeft = styled.section`
   position: absolute;
   width: 75%;
   height: 101%;
-  clip-path: polygon(0% 55%, 37.5% 100%, 45% 100%);
+  clip-path: polygon(0% 65%, 45.5% 100%, 62% 100%);
   background-color: white;
   z-index: -100;
 `;
