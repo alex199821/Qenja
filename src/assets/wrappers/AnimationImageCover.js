@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.section`
   .mainContainer {
-    // d-flex position-relative w-100 h-100
     display: flex;
     position: relative;
     width: 100%;
@@ -75,4 +74,3 @@ export const AnimationBackshadeLeft = styled.section`
   z-index: -100;
 `;
 
-//d-flex position-relative w-100 h-100

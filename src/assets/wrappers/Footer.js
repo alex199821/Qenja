@@ -5,6 +5,8 @@ export const Wrapper = styled.nav`
   padding-left: 32px;
   padding-right: 32px;
   img {
+    width: 60px;
+    height: auto;
     padding-top: 80px;
     padding-bottom: 15px;
   }
@@ -25,7 +27,7 @@ export const Wrapper = styled.nav`
     }
     .linksFooter {
       //"fs-5 font-inter fw-700 black mb-3 fs-3-sm fw-600-sm"
-      font-size: 16px;
+      font-size: 14px;
       font-family: "Inter", sans-serif;
       font-weight: 700;
       color: var(--primary);
@@ -41,7 +43,7 @@ export const Wrapper = styled.nav`
     p {
       font-weight: 300;
       font-family: "Inter", sans-serif;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   .socialLinksContainer {
@@ -57,7 +59,7 @@ export const Wrapper = styled.nav`
   .socialMediaLink {
     display: flex;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
@@ -96,7 +98,7 @@ export const Wrapper = styled.nav`
         }
       }
       .linksFooter {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 600;
       }
       .hideLinksFooter {

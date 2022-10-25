@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import cover from "../images/cover.png";
 
 const Wrapper = styled.section`
+  border-top: 1px solid white;
   padding-left: 32px;
   padding-right: 32px;
   .mainAboutSection {
@@ -13,15 +13,15 @@ const Wrapper = styled.section`
     h1 {
       font-weight: 700;
       color: var(--white);
-      font-size: 62px;
+      font-size: 42px;
       text-transform: uppercase;
-      width: 100%;
+      width: 60%;
       margin-top: 75px;
     }
     p {
       font-weight: 600;
       color: var(--white);
-      font-size: 28px;
+      font-size: 20px;
       width: 70%;
       margin-bottom: 80px;
       line-height: 1.25;
@@ -65,8 +65,9 @@ const Wrapper = styled.section`
       padding-left: 100px;
       margin: 0;
       font-weight: 200;
-      width: 60%;
-      font-size: 16px;
+      width: 55%;
+      font-size: 13px;
+      line-height: 1.2;
       font-family: "Inter", sans-serif;
     }
     b {
@@ -75,6 +76,7 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 769px) {
+    border-top: 0;
     .mainAboutSection {
       width: 100%;
       h1 {

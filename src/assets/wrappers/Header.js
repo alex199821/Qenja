@@ -8,7 +8,6 @@ const Wrapper = styled.nav`
   width: 100%;
   align-items: center;
   background: var(--primary);
-  border-bottom: 1px solid white;
 
   .navContainer {
     display: flex;
@@ -35,7 +34,7 @@ const Wrapper = styled.nav`
   }
   .p,
   .links {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--white);
     text-decoration: none;
   }

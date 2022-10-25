@@ -3,7 +3,6 @@ import cover from "../assets/images/cover.png";
 import landingPageImg from "../assets/images/landingPageImg.png";
 import QenjaAnimation from "../Components/QenjaAnimation";
 import EmailSignup from "../Components/EmailSignup";
-import MainLanding from "../Components/MainLanding";
 
 const About = () => {
   return (

@@ -1,9 +1,10 @@
-import styled from "styled-components";
 import greenCircle from "../images/greenCircle.png";
+import styled from "styled-components";
 
-const Wrapper = styled.section`
+export const MainLandingWrapper = styled.section`
   padding-left: 32px;
   padding-right: 32px;
+  border-top: 1px solid white;
   .mainLanding {
     display: flex;
     flex-direction: row;
@@ -19,11 +20,11 @@ const Wrapper = styled.section`
       color: var(--white);
       font-size: 42px;
       font-weight: 700;
-      line-height: 1.25;
+      line-height: 1.2;
     }
     b {
       background-image: url(${greenCircle});
-      background-size: 90px;
+      background-size: 100px;
       background-repeat: no-repeat;
       display: flex;
     }
@@ -46,21 +47,20 @@ const Wrapper = styled.section`
   @media (max-width: 769px) {
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 16px;
+    border-top: 0;
     .mainLanding {
       flex-direction: column;
     }
     .mainLandingText {
-      width: 100%;
+      width: 80%;
       border: 0;
       p {
         font-size: 32px;
         width: 100%;
-        line-height: 1.5;
       }
       b {
         background-image: url(${greenCircle});
-        background-size: 80px;
+        background-size: 65px;
         background-repeat: no-repeat;
         display: flex;
       }
@@ -72,4 +72,3 @@ const Wrapper = styled.section`
     }
   }
 `;
-export default Wrapper;

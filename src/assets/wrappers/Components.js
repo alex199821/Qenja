@@ -3,7 +3,7 @@ import Logo from "../images/Logo.png";
 import greenCircle from "../images/greenCircle.png";
 
 export const LanguageSelectWrapper = styled.select`
-  font-size: 18px;
+  font-size: 16px;
   color: var(--white);
   font-weight: 500;
   text-transform: uppercase;
@@ -33,6 +33,10 @@ export const SearchSection = styled.input`
 export const LogoSection = styled.section`
   display: flex;
   flex-direction: row;
+  img {
+    width: 60px;
+    height: auto;
+  }
 `;
 
 export const SearchBar = styled.input`
@@ -40,7 +44,7 @@ export const SearchBar = styled.input`
   color: var(--white);
   background-color: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
   width: 80px;
   margin-top: 2px;
   ::placeholder {
@@ -74,7 +78,7 @@ export const EmailSignupWrapper = styled.section`
     justify-content: space-between;
   }
   h3 {
-    font-size: 92px;
+    font-size: 82px;
     color: var(--green);
     font-weight: 700;
     margin: 0;
@@ -101,7 +105,7 @@ export const EmailSignupWrapper = styled.section`
   p {
     font-weight: 700;
     color: var(--grey);
-    font-size: 28px;
+    font-size: 20px;
     margin: 0;
   }
   @media (max-width: 769px) {
@@ -127,7 +131,7 @@ export const SubscibeFormWrapper = styled.form`
   p {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 15px;
   }
   div {
@@ -148,7 +152,7 @@ export const SubscibeFormWrapper = styled.form`
   }
   input::placeholder {
     color: var(--primary);
-    font-size: 16px;
+    font-size: 14px;
   }
   input:focus {
     outline: none;
@@ -158,7 +162,7 @@ export const SubscibeFormWrapper = styled.form`
     color: var(--primary);
     background-color: var(--green);
     border: 1px solid var(--primary);
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 30px 10px 30px;
   }
 
@@ -173,99 +177,6 @@ export const SubscibeFormWrapper = styled.form`
     input {
       width: 50%;
       margin-right: 0;
-    }
-  }
-`;
-
-export const MainLandingWrapper = styled.section`
-  .mainLanding {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  .mainLandingText {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    border-right: 1px solid var(--white);
-    p {
-      width: 60%;
-      color: var(--white);
-      font-size: 62px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-    b {
-      background-image: url(${greenCircle});
-      background-size: 150px;
-      background-repeat: no-repeat;
-      display: flex;
-    }
-  }
-  .mainLandingImage {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    height: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 32px;
-    img {
-      aspect-ratio: 1.075/1;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  @media (max-width: 769px) {
-    .mainLanding {
-      flex-direction: column;
-    }
-    .mainLandingText {
-      width: 80%;
-      border: 0;
-      p {
-        font-size: 32px;
-        width: 100%;
-      }
-      b {
-        background-image: url(${greenCircle});
-        background-size: 70px;
-        background-repeat: no-repeat;
-        display: flex;
-      }
-    }
-    .mainLandingImage {
-      border: 0;
-      width: 100%;
-      padding-left: 0;
-    }
-  }
-`;
-
-export const ImageCollectionWrapper = styled.section`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  justify-content: space-between;
-  row-gap: 2vw;
-  .imageContainer {
-    width: 49%;
-  }
-  img {
-    width: 100%;
-  }
-
-  @media (max-width: 769px) {
-    gap: 16px;
-    flex-direction: column;
-    .imageContainer {
-      width: 100%;
-    }
-    img {
-      width: 100%;
     }
   }
 `;

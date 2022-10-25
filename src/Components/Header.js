@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import NavSidebar from "./NavSidebar";
 import SearchSidebar from "./SearchSidebar";
 import Wrapper from "../assets/wrappers/Header";
@@ -8,10 +9,13 @@ import LanguageSelect from "./LanguageSelect";
 import { BurgerButton } from "../assets/wrappers/Buttons";
 import { LogoSection, SearchBar } from "../assets/wrappers/Components";
 import { openNavSidebar, openSearchSidebar } from "../features/ui/uiSlice";
+import { setItemsInCart } from "../features/cart/cartSlice";
 import { SearchButton } from "../assets/wrappers/Buttons";
 import { links } from "../utils/links";
+
 const Header = () => {
   const dispatch = useDispatch();
+  const { cart, itemsInCart } = useSelector((store) => store.cart);
 
   const handleOpenNavSidebar = () => {
     dispatch(openNavSidebar());
@@ -20,6 +24,10 @@ const Header = () => {
   const handleOpenSearchSidebar = () => {
     dispatch(openSearchSidebar());
   };
+
+  useEffect(() => {
+    dispatch(setItemsInCart());
+  }, [cart, dispatch]);
   return (
     <>
       <NavSidebar />
@@ -44,8 +52,8 @@ const Header = () => {
           <SearchBar type="text" placeholder="SEARCH" />
           <SearchButton onClick={handleOpenSearchSidebar} />
           <div className="cart">
-            <span>0</span>
-            <Link to={"#"} className="links">
+            <span>{itemsInCart}</span>
+            <Link to={"cart"} className="links">
               CART
             </Link>
           </div>

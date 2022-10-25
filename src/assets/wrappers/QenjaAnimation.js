@@ -29,7 +29,7 @@ const Wrapper = styled.section`
     width: 100vw;
     box-sizing: border-box;
     position: relative;
-    font-size: 1.5rem;
+    font-size: 22px;
     margin-left: calc(-50vw + 50%);
     padding-bottom: 15px;
     padding-top: 15px;
@@ -54,7 +54,7 @@ const Wrapper = styled.section`
     font-weight: 500;
   }
   .animationOrange {
-    background-color: #cb5b1a;
+    background-color: var(--orange);
     color: #1d1d1d;
     border: transparent;
     font-weight: 500;

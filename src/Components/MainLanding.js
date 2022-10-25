@@ -1,5 +1,5 @@
 import landingPageImg from "../assets/images/landingPageImg.png";
-import { MainLandingWrapper } from "../assets/wrappers/Components";
+import { MainLandingWrapper } from "../assets/wrappers/MainLanding";
 const MainLanding = () => {
   return (
     <MainLandingWrapper>
