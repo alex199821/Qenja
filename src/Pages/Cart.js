@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCart } from "../features/cart/cartSlice";
 import { Link } from "react-router-dom";
+import BackButton from "../Components/BackButton";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart, subtotal } = useSelector((store) => store.cart);
@@ -24,6 +25,9 @@ const Cart = () => {
       {cart.length > 0 ? (
         <Wrapper>
           <section className="cartHeader">
+            <Link to={"/shop/"} className="links">
+              <BackButton text={"Continiue Shopping"} />
+            </Link>
             <h3>YOUR CART</h3>
           </section>
 

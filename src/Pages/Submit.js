@@ -13,7 +13,7 @@ const Submit = () => {
       {cart.length > 0 ? (
         <Wrapper>
           <section className="submitHeader">
-            <BackButton />
+            <BackButton text={"Back"} />
           </section>
           <PersonalInformationForm />
         </Wrapper>

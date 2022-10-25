@@ -5,6 +5,7 @@ const initialState = {
   subtotal: 0,
   itemsInCart: 0,
   finalOrder: [],
+  sessionGoing: JSON.parse(localStorage.getItem("cart")) ? true : null,
 };
 
 const cartSlice = createSlice({
@@ -53,12 +54,14 @@ const cartSlice = createSlice({
       return { ...state, finalOrder: newFinalOrder };
     },
     resetState: (state) => {
+      localStorage.removeItem("cart");
       return {
         ...state,
-        cart: initialState.cart,
-        subtotal: initialState.subtotal,
-        itemsInCart: initialState.itemsInCart,
-        finalOrder: initialState.finalOrder,
+        cart: [],
+        subtotal: 0,
+        itemsInCart: 0,
+        finalOrder: [],
+        sessionGoing: null,
       };
     },
   },

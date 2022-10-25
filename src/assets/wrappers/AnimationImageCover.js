@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
     width: 101%;
     height: 101%;
     position: absolute;
-    z-index: 1000;
+    z-index: 8;
     clip-path: polygon(100% 0%, 100% 60%, 60% 100%, 0% 100%);
   }
   .tiltedScrollingTextContainer {
@@ -50,7 +50,7 @@ export const Wrapper = styled.section`
     aspect-ratio: 34/24;
     object-fit: cover;
     object-position: 100% 12.5%;
-    z-index: 1;
+    z-index: 0;
     /* opacity: 0; */
   }
 

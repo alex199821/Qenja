@@ -114,6 +114,7 @@ export const BackButtonWrapper = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
   @media (max-width: 769px) {
   }
 `;

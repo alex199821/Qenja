@@ -6,15 +6,26 @@ export const Wrapper = styled.section`
   width: 90%;
   margin: auto;
   .cartHeader {
+    //d-flex justify-content-between position-relative ai-center mb-16 mb-4-sm
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
     margin-bottom: 80px;
+    margin-top: 20px;
+    /* justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 80px; */
     h3 {
       color: var(--white);
       font-family: "Inter", sans-serif;
       font-weight: 500;
       font-size: 28px;
+
+      //position-absolute start-50 cartName white font-spaceGrotesk fw-500 fs-3 d-none-sm
+      position: absolute;
+      left: 50% !important;
+      transform: translateX(-50%);
     }
   }
   .cartMainContainer {
@@ -93,12 +104,16 @@ export const Wrapper = styled.section`
     text-decoration: none;
     color: black;
   }
+  .links {
+    text-decoration: none;
+  }
   @media (max-width: 769px) {
     width: 100%;
     .cartHeader {
       margin-bottom: 20px;
       h3 {
         font-size: 18px;
+        display: none;
       }
     }
     .cartMainContainer {
