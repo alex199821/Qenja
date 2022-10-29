@@ -9,7 +9,9 @@ const Wrapper = styled.section`
     padding-right: 32px;
     margin-top: 50px;
     margin-bottom: 50px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    column-gap: 1.75vw;
+    /* justify-content: space-between; */
     row-gap: 1.5vw;
   }
   .shopInfoForMobile {

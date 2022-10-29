@@ -1,16 +1,23 @@
-import landingPageImg from "../assets/images/landingPageImg.png";
 import { MainLandingWrapper } from "../assets/wrappers/MainLanding";
+import { useSelector } from "react-redux";
+
 const MainLanding = () => {
+  const { landingPage } = useSelector((store) => store.ui);
+  const {
+    landingMainHeaderText: { standartText, textInCircle },
+    landingMainHeaderImage,
+  } = landingPage[0];
+
   return (
     <MainLandingWrapper>
       <section className="mainLanding">
         <div className="mainLandingText">
           <p>
-            LOREM IPSUM IS SIMPLY DUMMY <b>TEXT OF THE PRINTING</b>
+            {standartText} <b>{textInCircle}</b>
           </p>
         </div>
         <div className="mainLandingImage">
-          <img src={landingPageImg} alt="LandingImage" />
+          <img src={landingMainHeaderImage} alt="LandingImage" />
         </div>
       </section>
     </MainLandingWrapper>

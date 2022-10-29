@@ -3,9 +3,9 @@ import Slider from "../Components/Slider";
 import QenjaAnimation from "../Components/QenjaAnimation";
 import ProductOptions from "../Components/ProductOptions";
 import Product from "../Components/Product";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const SingleProduct = () => {
   let { id } = useParams();

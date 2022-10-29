@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Wrapper from "../assets/wrappers/ShopPreview";
 import { ProductsList } from "../utils/links";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import readMoreArrow from "../assets/images/readMoreArrow.png";
 
 const ShopPreview = () => {
+  const { productsList } = useSelector((store) => store.products);
   const [itemCount, setItemCount] = useState(2);
   const [fullListShown, setFullListShown] = useState(false);
   const showMoreProducts = () => {
@@ -33,8 +35,9 @@ const ShopPreview = () => {
         </p>
       </section>
       <section className="productListContainer">
-        {ProductsList.slice(0, itemCount).map((product, index) => {
-          const { image, name } = product;
+        {productsList.slice(0, itemCount).map((product, index) => {
+          const { image, name, id } = product;
+          console.log(id);
           return (
             <div className="productContainer" key={index}>
               <img
@@ -45,7 +48,7 @@ const ShopPreview = () => {
               <div className="productNameContainer">
                 <p>{name}</p>
               </div>
-              <Link className="linkContainer" href="#">
+              <Link className="linkContainer" to={`/shop/${id}/`}>
                 <p>Read more&nbsp;&nbsp;&nbsp;</p>
                 <img src={readMoreArrow} alt="Read More Arrow" />
               </Link>

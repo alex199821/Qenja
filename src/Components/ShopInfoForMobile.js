@@ -1,25 +1,31 @@
 import Wrapper from "../assets/wrappers/ShopInfoForMobile";
-import landingpagetable2 from "../assets/images/landingpagetable2.png";
+import { useDispatch, useSelector } from "react-redux";
 
 const ShopInfoForMobile = () => {
-  return (
-    <Wrapper>
-      <div>
-        <p className="shortDescription">
-          Versatile elegance for dining room, <b>office or</b> living room. This
-          seating solution offers great appeal. Versatile elegance for dining
-          room, office or living room. This seating solution offers great
-          appeal.
-        </p>
-        <p className="longDescription">
-          Versatile elegance for dining room, office or living room. This
-          seating solution offers great appeal. Versatile elegance for dining
-          room, office or living room. This seating solution offers great
-          appeal.
-        </p>
-      </div>
-      <img src={landingpagetable2} alt="Qenja Products" />
-    </Wrapper>
-  );
+  const { shop } = useSelector((store) => store.ui);
+  if (shop.length > 0) {
+    const {
+      shopMobileViewBoldText: {
+        shopMobileViewBoldTextStart,
+        shopMobileViewBoldTextUnderlined,
+        shopMobileViewBoldTextEnd,
+      },
+      shopMobileViewNormalText,
+      shopMobileViewImage,
+    } = shop[0];
+    return (
+      <Wrapper>
+        <div>
+          <p className="shortDescription">
+            {shopMobileViewBoldTextStart}
+            <b>{shopMobileViewBoldTextUnderlined}</b>{" "}
+            {shopMobileViewBoldTextEnd}
+          </p>
+          <p className="longDescription">{shopMobileViewNormalText}</p>
+        </div>
+        <img src={shopMobileViewImage} alt="Qenja Products" />
+      </Wrapper>
+    );
+  }
 };
 export default ShopInfoForMobile;

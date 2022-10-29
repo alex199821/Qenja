@@ -99,6 +99,8 @@ const Wrapper = styled.section`
       justify-content: space-between;
       align-items: center;
       background-color: black;
+      border-top: 1px solid var(--grey);
+      border-bottom: 1px solid var(--grey);
       .priceContainer {
         flex-direction: row;
         padding-left: 16px;
@@ -106,8 +108,6 @@ const Wrapper = styled.section`
         width: 50%;
         justify-content: space-between;
         border-right: 1px solid var(--grey);
-        border-top: 1px solid var(--grey);
-        border-bottom: 1px solid var(--grey);
         .priceLabel {
           display: flex;
           font-weight: 400;
@@ -130,8 +130,7 @@ const Wrapper = styled.section`
         align-items: center;
         justify-content: space-between;
         width: 50%;
-        border-top: 1px solid var(--grey);
-        border-bottom: 1px solid var(--grey);
+        border: 0;
         padding-left: 16px;
         padding-right: 16px;
         padding-top: 12px;

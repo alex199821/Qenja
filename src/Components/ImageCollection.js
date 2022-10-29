@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { ImageCollectionWrapper } from "../assets/wrappers/ImageCollection";
-import { imageCollectionData } from "../utils/links";
 import AnimationImageCover from "./AnimationImageCover";
 const ImageCollection = () => {
   const [width] = useState(window.innerWidth);
 
+  const { landingPage } = useSelector((store) => store.ui);
+  const { imageCollection } = landingPage[0];
   if (width > 769) {
     return (
       <ImageCollectionWrapper>
-        {imageCollectionData.map((data) => {
-          const { id, image } = data;
+        {imageCollection.map((image, index) => {
           return (
-            <div key={id} className="imageContainer">
-              {id !== 2 ? (
+            <div key={index} className="imageContainer">
+              {index !== 2 ? (
                 <img src={image} alt="Qenja Product" />
               ) : (
-                <AnimationImageCover key={id} image={image} />
+                <AnimationImageCover key={index} image={image} />
               )}
             </div>
           );
@@ -25,10 +26,9 @@ const ImageCollection = () => {
   } else {
     return (
       <ImageCollectionWrapper>
-        {imageCollectionData.slice(0, 2).map((data) => {
-          const { id, image } = data;
+        {imageCollection.slice(0, 2).map((image, index) => {
           return (
-            <div key={id} className="imageContainer">
+            <div key={index} className="imageContainer">
               <AnimationImageCover image={image} />
             </div>
           );

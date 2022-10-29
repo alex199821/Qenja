@@ -2,16 +2,25 @@ import QenjaAnimation from "../Components/QenjaAnimation";
 import Wrapper from "../assets/wrappers/Contacts";
 import { Link } from "react-router-dom";
 import { socialLinksContactPage } from "../utils/links";
-
+import { useDispatch, useSelector } from "react-redux";
+import Loading from "../Components/Loading";
 const Contacts = () => {
+  const { contactsIsLoading, contacts } = useSelector((store) => store.ui);
+
+  if (contactsIsLoading) {
+    return <Loading />;
+  }
+
+  const { contactPhone, mail, telegramPath, facebookPath, twitterPath } =
+    contacts[0];
   return (
     <>
       <QenjaAnimation className="animationGreen hideOnMobile" />
       <Wrapper>
         <main>
           <p className="contactUsLabel">Contact us:</p>
-          <p className="phoneNumberLabel">+1-415-555-0173</p>
-          <p className="emailLabel">contact@qenja.com</p>
+          <p className="phoneNumberLabel">{contactPhone}</p>
+          <p className="emailLabel">{mail}</p>
           <div className="socialMediaLinksContainer">
             {socialLinksContactPage.map((link) => {
               const { id, path, image } = link;

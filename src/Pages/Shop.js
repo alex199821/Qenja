@@ -6,11 +6,26 @@ import QenjaAnimation from "../Components/QenjaAnimation";
 import CoverImage from "../Components/CoverImage";
 import ShopInfoForMobile from "../Components/ShopInfoForMobile";
 import Filters from "../Components/Filters";
+import Loading from "../Components/Loading";
 import { useDispatch, useSelector } from "react-redux";
-
+import { useEffect } from "react";
+import { getShop } from "../features/ui/uiSlice";
 const Shop = () => {
-  const { filteredProductsList } = useSelector((store) => store.products);
+  const dispatch = useDispatch();
 
+  const { filteredProductsList, isLoading } = useSelector(
+    (store) => store.products
+  );
+
+  const { shop, shopIsLoading } = useSelector((store) => store.ui);
+  useEffect(() => {
+    dispatch(getShop());
+  }, []);
+
+  if (shopIsLoading || isLoading) {
+    return <Loading />;
+  }
+  const { shopMainCoverImage } = shop[0];
   return (
     <Wrapper>
       <Filters />
@@ -22,7 +37,7 @@ const Shop = () => {
       </section>
 
       <section className="hideOnMobile">
-        <CoverImage data={landingCoverDataShop} />
+        <CoverImage image={shopMainCoverImage} />
         <QenjaAnimation className="animationWhite" />
       </section>
 

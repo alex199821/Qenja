@@ -11,11 +11,13 @@ const Wrapper = styled.section`
     padding: 16px;
     flex-direction: column;
     width: 100%;
+
     .productName {
       font-weight: 700;
       font-size: 28px;
       color: var(--grey);
       margin-bottom: 10px;
+      /* text-align: center; */
     }
     .productDescription {
       font-weight: 400;
@@ -49,6 +51,7 @@ const Wrapper = styled.section`
       font-weight: 400;
       font-size: 13px;
       text-transform: uppercase;
+      line-height: 1.25;
     }
     .price {
       margin: 0;
@@ -62,6 +65,9 @@ const Wrapper = styled.section`
     display: flex;
     font-size: 14px;
     color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     background-color: var(--green);
     border: none;
     padding: 12px 14px 12px 14px;
@@ -86,7 +92,7 @@ const Wrapper = styled.section`
   @media (max-width: 769px) {
     width: 100%;
     border-top: 1px solid var(--grey);
-    border-bottom: 1px solid var(--grey);
+    /* border-bottom: 1px solid var(--grey); */
     margin: 0;
     padding: 0;
     .productInfoContainerMobile {
@@ -116,13 +122,14 @@ const Wrapper = styled.section`
       border-top: 1px solid var(--grey);
       padding-top: 16px;
       padding-bottom: 16px;
+      text-align: center;
       .productName {
         font-size: 11px;
-        padding-left: 16px;
+        padding-left: 8px;
       }
       .price {
         font-size: 11px;
-        padding-right: 16px;
+        padding-right: 8px;
       }
     }
     .purchaseButton {

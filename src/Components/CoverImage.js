@@ -1,10 +1,22 @@
 import { Wrapper } from "../assets/wrappers/CoverImage";
 
-const CoverImage = ({ data }) => {
-  const { text, image } = data[0];
+const CoverImage = ({ text, image }) => {
+  if (text) {
+    const { standartText, standartTextContiniuation, textUnderlined } = text;
+    return (
+      <Wrapper>
+        {text && (
+          <p>
+            {standartText} <b>{textUnderlined}</b> {standartTextContiniuation}
+          </p>
+        )}
+
+        <img src={image} alt="Models in Qenja Clothing" />
+      </Wrapper>
+    );
+  }
   return (
     <Wrapper>
-      {text && <p>{text}</p>}
       <img src={image} alt="Models in Qenja Clothing" />
     </Wrapper>
   );

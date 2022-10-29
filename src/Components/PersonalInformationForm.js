@@ -7,12 +7,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { setFinalOrder } from "../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
-
+import { addOrder } from "../features/cart/cartSlice";
 const PersonalInformationForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { subtotal, itemsInCart } = useSelector((store) => store.cart);
+  const { subtotal, itemsInCart, cart } = useSelector((store) => store.cart);
 
   const formik = useFormik({
     initialValues: {
@@ -43,6 +43,12 @@ const PersonalInformationForm = () => {
     }),
     onSubmit: (values) => {
       dispatch(setFinalOrder(values));
+      let order = {
+        cart: cart,
+        orderInformation: values,
+        total: subtotal,
+      };
+      dispatch(addOrder(order));
       navigate("/success/");
     },
   });

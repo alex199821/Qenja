@@ -3,18 +3,37 @@ import QenjaAnimation from "../Components/QenjaAnimation";
 import MainLanding from "../Components/MainLanding";
 import ImageCollection from "../Components/ImageCollection";
 import ShopPreview from "../Components/ShopPreview";
-import { landingCoverData, landingLowerCoverData } from "../utils/links";
-
+import Loading from "../Components/Loading";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getLandingPage } from "../features/ui/uiSlice";
 const Landing = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getLandingPage());
+  }, []);
+
+  const { landingIsLoading, landingPage } = useSelector((store) => store.ui);
+  if (landingIsLoading) {
+    return <Loading />;
+  }
+
+  const {
+    landingUpperCoverImage,
+    landingUpperCoverText,
+    landingLowerCoverImage,
+  } = landingPage[0];
+
   return (
     <>
       <MainLanding />
       <QenjaAnimation className="animationGreen" />
       <ImageCollection />
-      <CoverImage data={landingCoverData} />
+      <CoverImage text={landingUpperCoverText} image={landingUpperCoverImage} />
       <ShopPreview />
       <QenjaAnimation className="animationYellow" />
-      <CoverImage data={landingLowerCoverData} />
+      <CoverImage image={landingLowerCoverImage} />
     </>
   );
 };

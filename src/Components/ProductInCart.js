@@ -1,6 +1,4 @@
 import Wrapper from "../assets/wrappers/ProductInCart";
-import { useEffect, useState } from "react";
-import product1 from "../assets/images/product1.jpg";
 import trashcan from "../assets/images/trashcan.png";
 import IncrementerContainer from "./IncrementContainer";
 import { RemoveButton } from "../assets/wrappers/Buttons";

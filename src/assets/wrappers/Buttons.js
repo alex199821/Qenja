@@ -60,6 +60,10 @@ export const FilterButtonWrapper = styled.div`
     color: #c4c4c4;
     background-color: transparent;
   }
+  @media (max-width: 769px) {
+    button {
+    }
+  }
 `;
 
 export const RemoveButton = styled.button`

@@ -1,6 +1,3 @@
-import QenjaAnimation from "../Components/QenjaAnimation";
-import landingpagetable1 from "../assets/images/landingpagetable1.png";
-
 import {
   Wrapper,
   AnimationBackshadeLeft,

@@ -10,12 +10,19 @@ import NotFound from "./Pages/NotFound";
 import Contacts from "./Pages/Contacts";
 import Success from "./Pages/Success";
 import React, { useEffect } from "react";
-
+import { useDispatch } from "react-redux";
+import { getAllProducts } from "./features/products/productsSlice";
 function App() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
   }, []);
 
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, []);
+  
   return (
     <BrowserRouter>
       <Routes>

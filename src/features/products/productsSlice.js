@@ -1,13 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ProductsList } from "../../utils/links";
-
+import customFetch from "../../utils/axios";
 const initialState = {
-  productsList: ProductsList,
-  filteredProductsList: ProductsList,
+  productsList: [],
+  filteredProductsList: [],
+  searchValue: "",
   filterTypes: ["ALL"],
   selectedFilters: ["ALL"],
+  isLoading: false,
 };
 
+export const getAllProducts = createAsyncThunk(
+  "allProducts/getProducts",
+  async (_, thunkAPI) => {
+    // const { name, type, descripton } = thunkAPI.getState().getProducts;
+    let url = `/products`;
+    try {
+      const resp = await customFetch.get(url, {});
+      return resp.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.msg);
+    }
+  }
+);
 const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -21,6 +35,18 @@ const productsSlice = createSlice({
         ...state,
         filterTypes: initialState.filterTypes.concat([...new Set(filterAr)]),
       };
+    },
+    setSearchValue: (state, { payload }) => {
+      return { ...state, searchValue: payload };
+    },
+    filterBySearch: (state, { payload }) => {
+      let filteredList = state.productsList.filter(
+        (data) =>
+          JSON.stringify(data.name)
+            .toLowerCase()
+            .indexOf(payload.toLowerCase()) !== -1
+      );
+      return { ...state, filteredProductsList: filteredList };
     },
     filterProducts: (state, { payload: { selected, value } }) => {
       if (selected && value !== "ALL") {
@@ -63,8 +89,27 @@ const productsSlice = createSlice({
       }
     },
   },
-  extraReducers: {},
+  extraReducers: {
+    [getAllProducts.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getAllProducts.fulfilled]: (state, { payload }) => {
+      state.productsList = payload;
+      state.filteredProductsList = payload;
+      state.isLoading = false;
+    },
+    [getAllProducts.rejected]: (state, { payload }) => {
+      alert("There is Network Error, Operation Can not be executed...");
+      console.log(payload);
+      state.isLoading = false;
+    },
+  },
 });
 
-export const { setFilterOptions, filterProducts } = productsSlice.actions;
+export const {
+  setFilterOptions,
+  filterProducts,
+  setSearchValue,
+  filterBySearch,
+} = productsSlice.actions;
 export default productsSlice.reducer;

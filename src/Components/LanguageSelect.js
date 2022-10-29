@@ -3,7 +3,6 @@ import { LanguageSelectWrapper } from "../assets/wrappers/Components";
 const LanguageSelect = ({ props }) => {
   const options = [
     { value: "EN", input: "EN" },
-    { value: "GE", input: "GE" },
     { value: "FR", input: "FR" },
   ];
 

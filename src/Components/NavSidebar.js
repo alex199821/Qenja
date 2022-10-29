@@ -13,6 +13,7 @@ const NavSidebar = () => {
   const handleCloseNavSidebar = () => {
     dispatch(closeNavSidebar());
   };
+
   return (
     <Wrapper>
       <section
@@ -30,7 +31,12 @@ const NavSidebar = () => {
           {links.map((link) => {
             const { id, text, path } = link;
             return (
-              <Link key={id} to={path} className="linkSidebar">
+              <Link
+                key={id}
+                to={path}
+                className="linkSidebar"
+                onClick={handleCloseNavSidebar}
+              >
                 {text}
               </Link>
             );

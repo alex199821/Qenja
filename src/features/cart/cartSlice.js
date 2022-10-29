@@ -1,12 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import customFetch from "../../utils/axios";
 const initialState = {
   cart: JSON.parse(localStorage.getItem("cart")) || [],
   subtotal: 0,
   itemsInCart: 0,
   finalOrder: [],
   sessionGoing: JSON.parse(localStorage.getItem("cart")) ? true : null,
+  isLoading: false,
+  uploadIsLoading: false,
 };
+
+export const addOrder = createAsyncThunk(
+  "order/addOrder",
+  async (order, thunkAPI) => {
+    console.log(order);
+    try {
+      const resp = await customFetch.post("/orders", order);
+      return resp.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.msg);
+    }
+  }
+);
 
 const cartSlice = createSlice({
   name: "cart",
@@ -65,7 +80,20 @@ const cartSlice = createSlice({
       };
     },
   },
-  extraReducers: {},
+  extraReducers: {
+    [addOrder.pending]: (state) => {
+      state.uploadIsLoading = true;
+    },
+    [addOrder.fulfilled]: (state, { payload }) => {
+      console.log("Success", payload);
+      state.uploadIsLoading = false;
+    },
+    [addOrder.rejected]: (state, { payload }) => {
+      alert("There is Network Error, Operation Can not be executed...");
+      console.log(payload);
+      state.uploadIsLoading = false;
+    },
+  },
 });
 
 export const {
