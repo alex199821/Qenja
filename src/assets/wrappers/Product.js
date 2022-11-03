@@ -105,6 +105,8 @@ const Wrapper = styled.section`
     }
     .productImage {
       margin: 0;
+      width: 100%;
+      height: 200px;
     }
     .productPurchaseContainer {
       display: none;
