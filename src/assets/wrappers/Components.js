@@ -37,6 +37,12 @@ export const LogoSection = styled.section`
     width: 60px;
     height: auto;
   }
+  @media (max-width: 769px) {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
 `;
 
 export const SearchBar = styled.input`
