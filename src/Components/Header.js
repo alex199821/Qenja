@@ -73,7 +73,6 @@ const Header = () => {
       <Wrapper>
         <section className="navContainer">
           <BurgerButton onClick={handleOpenNavSidebar} />
-          <LanguageSelect props="languageSelect" />
           {links.map((link) => {
             const { id, text, path } = link;
             return (

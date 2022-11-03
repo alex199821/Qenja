@@ -30,6 +30,7 @@ const Wrapper = styled.section`
   }
   .productImage {
     width: 100%;
+    height: auto;
   }
   .productPurchaseContainerVisible,
   .productPurchaseContainer {

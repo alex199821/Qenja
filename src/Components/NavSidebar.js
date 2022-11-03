@@ -24,7 +24,7 @@ const NavSidebar = () => {
         }
       >
         <header>
-          <LanguageSelect />
+          <div />
           <CloseButton onClick={handleCloseNavSidebar} />
         </header>
         <main>

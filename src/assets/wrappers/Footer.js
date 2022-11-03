@@ -94,12 +94,13 @@ export const Wrapper = styled.nav`
         padding-bottom: 40px;
         div {
           align-items: center;
-          margin-bottom: 16px;
+          gap: 0px;
         }
       }
       .linksFooter {
         font-size: 24px;
         font-weight: 600;
+        margin-top: 16px;
       }
       .hideLinksFooter {
         display: none;

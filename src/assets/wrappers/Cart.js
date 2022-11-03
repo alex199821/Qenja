@@ -2,27 +2,20 @@ import styled from "styled-components";
 
 export const Wrapper = styled.section`
   padding-bottom: 100px;
-  /* background-color: red; */
   width: 90%;
   margin: auto;
   .cartHeader {
-    //d-flex justify-content-between position-relative ai-center mb-16 mb-4-sm
     display: flex;
     justify-content: space-between;
     position: relative;
     align-items: center;
     margin-bottom: 80px;
     margin-top: 20px;
-    /* justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 80px; */
     h3 {
       color: var(--white);
       font-family: "Inter", sans-serif;
       font-weight: 500;
       font-size: 28px;
-
-      //position-absolute start-50 cartName white font-spaceGrotesk fw-500 fs-3 d-none-sm
       position: absolute;
       left: 50% !important;
       transform: translateX(-50%);
@@ -68,7 +61,6 @@ export const Wrapper = styled.section`
           font-weight: 600;
         }
         .orderInfoContainer {
-          //my-4-sm
           display: flex;
           flex-direction: column;
           border: 1px solid var(--grey);

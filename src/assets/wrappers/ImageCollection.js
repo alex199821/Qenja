@@ -17,12 +17,13 @@ export const ImageCollectionWrapper = styled.section`
   }
 
   @media (max-width: 769px) {
-    gap: 16px;
     flex-direction: column;
     padding-left: 16px;
     padding-right: 16px;
+    gap: 0;
     .imageContainer {
       width: 100%;
+      margin-bottom: 32px;
     }
     img {
       width: 100%;
