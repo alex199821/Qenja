@@ -12,9 +12,10 @@ const FormWrapper = styled.form`
   margin-bottom: 90px;
   .validationError {
     color: red;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 300;
     margin-top: 5px;
+    margin-bottom: 5px;
     :focus {
       opacity: 1;
     }
@@ -235,6 +236,7 @@ const FormWrapper = styled.form`
         }
         .inputStyle::placeholder {
           color: var(--grey);
+          font-size: 12px;
         }
       }
     }

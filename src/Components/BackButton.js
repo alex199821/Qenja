@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BackButtonWrapper } from "../assets/wrappers/Buttons";
 import { IoIosArrowBack } from "react-icons/io";
 
-const BackButton = ({text}) => {
+const BackButton = ({ text }) => {
   return (
     <BackButtonWrapper>
       <IoIosArrowBack />

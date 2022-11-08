@@ -14,6 +14,9 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 769px) {
+    .submitHeader{
+      margin: 18px 8px 32px 8px;
+    }
   }
 `;
 export default Wrapper;

@@ -14,10 +14,10 @@ const initialState = {
   shopIsLoading: true,
 };
 
+// Thunk for fetching landing page
 export const getLandingPage = createAsyncThunk(
   "landingPage/getLandingPage",
   async (_, thunkAPI) => {
-    // const { name, type, descripton } = thunkAPI.getState().getProducts;
     let url = `/landing`;
     try {
       const resp = await customFetch.get(url, {});
@@ -28,6 +28,7 @@ export const getLandingPage = createAsyncThunk(
   }
 );
 
+// Thunk for fetching about page
 export const getAboutPage = createAsyncThunk(
   "aboutPage/getAboutPage",
   async (_, thunkAPI) => {
@@ -41,6 +42,7 @@ export const getAboutPage = createAsyncThunk(
   }
 );
 
+// Thunk for fetching contact page
 export const getContacts = createAsyncThunk(
   "contacts/getContacts",
   async (_, thunkAPI) => {
@@ -54,6 +56,7 @@ export const getContacts = createAsyncThunk(
   }
 );
 
+// Thunk for fetching shop page
 export const getShop = createAsyncThunk("shop/getShop", async (_, thunkAPI) => {
   let url = `/shop`;
   try {
@@ -68,15 +71,19 @@ const uiSlice = createSlice({
   name: "ui",
   initialState,
   reducers: {
+    // Reducer to open mobile navigation sidebar
     openNavSidebar: (state) => {
       state.navSidebarOpen = true;
     },
+    // Reducer to close mobile navigation sidebar
     closeNavSidebar: (state) => {
       state.navSidebarOpen = false;
     },
+    // Reducer to open mobile search sidebar
     openSearchSidebar: (state) => {
       state.searchSidebarOpen = true;
     },
+    // Reducer to close mobile search sidebar
     closeSearchSidebar: (state) => {
       state.searchSidebarOpen = false;
     },

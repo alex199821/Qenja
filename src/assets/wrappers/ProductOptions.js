@@ -127,7 +127,7 @@ const Wrapper = styled.form`
     flex-direction: row;
     margin-bottom: 5px;
     .validationOptionsError {
-      font-size: 9px;
+      font-size: 11px;
       color: red;
       font-weight: 300;
       margin-top: 5px;
@@ -164,14 +164,16 @@ const Wrapper = styled.form`
     .additionalInfoContainer {
       font-size: 14px;
       display: flex;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       margin-bottom: 20px;
       .availabilityInfo {
-        margin-left: 15px;
-        margin-right: 15px;
+        width: 50%;
+        margin: 0;
+        padding-left: 15px;
       }
       .matterInfo {
-        padding-right: 37.5px;
+        padding-right: 15px;
+        width: 50%;
       }
     }
     .productOptionsContainer {
@@ -181,25 +183,22 @@ const Wrapper = styled.form`
       border-bottom: none;
     }
     .colorSelectionContainer {
-      margin-left: 15px;
-      margin-right: 15px;
       width: 50%;
       justify-content: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 0;
-      p {
+      gap: 0rem;
+      margin: 0;
+      .colorLabel {
         font-size: 14px;
+        margin-left: 15px;
       }
     }
     .sizeSelectionContainer {
-      margin-left: 15px;
-      margin-right: 15px;
       margin-bottom: 0;
-      gap: 0.5rem;
-      justify-content: flex-end;
+      gap: 0rem;
+      justify-content: flex-start;
       font-size: 14px;
       width: 50%;
-      p {
+      .sizeLabel {
         font-size: 14px;
       }
     }
@@ -257,15 +256,24 @@ const Wrapper = styled.form`
       }
     }
     .errorsContainer {
-      font-size: 14px;
+      font-size: 12px;
       display: flex;
-      justify-content: space-between;
+      padding: 0;
       .validationOptionsError {
-        margin-left: 15px;
-        margin-right: 15px;
+        font-size: 12px;
+      }
+      .colorError {
+        width: 50%;
+        p {
+          margin-left: 15px;
+          font-size: 12px;
+        }
       }
       .sizeError {
-        padding-right: 30px;
+        width: 50%;
+        p {
+          font-size: 12px;
+        }
       }
     }
   }

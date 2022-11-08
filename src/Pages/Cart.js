@@ -11,10 +11,13 @@ import BackButton from "../Components/BackButton";
 const Cart = () => {
   const dispatch = useDispatch();
   const { cart, subtotal } = useSelector((store) => store.cart);
+
+  // Update cart amount every time cart changes
   useEffect(() => {
     dispatch(setCart());
   }, [cart, dispatch]);
 
+  // Save cart to local storage every time cart is edited
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -69,6 +72,7 @@ const Cart = () => {
           </section>
         </Wrapper>
       ) : (
+        // Return error message if cart is empty
         <ErrorComponent error={"No items in Cart"} />
       )}
 

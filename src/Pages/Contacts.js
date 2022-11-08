@@ -7,12 +7,13 @@ import Loading from "../Components/Loading";
 const Contacts = () => {
   const { contactsIsLoading, contacts } = useSelector((store) => store.ui);
 
+  // Return loading until all contact info is recieved
   if (contactsIsLoading) {
     return <Loading />;
   }
 
-  const { contactPhone, mail, telegramPath, facebookPath, twitterPath } =
-    contacts[0];
+  // Destructuring of contact info
+  const { contactPhone, mail } = contacts[0];
   return (
     <>
       <QenjaAnimation className="animationGreen hideOnMobile" />

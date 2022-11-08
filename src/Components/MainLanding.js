@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 
 const MainLanding = () => {
   const { landingPage } = useSelector((store) => store.ui);
+
+  // Destructuring of landing page contents
   const {
     landingMainHeaderText: { standartText, textInCircle },
     landingMainHeaderImage,

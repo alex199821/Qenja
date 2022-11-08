@@ -9,7 +9,7 @@ const initialState = {
   isLoading: false,
   uploadIsLoading: false,
 };
-
+// Thunk to add new order to database of pending orders
 export const addOrder = createAsyncThunk(
   "order/addOrder",
   async (order, thunkAPI) => {
@@ -27,17 +27,21 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // Reducer to add new product to cart
     addToCart: (state, { payload }) => {
       return { ...state, cart: state.cart.concat(payload) };
     },
+    // Reducer to remove product from cart
     removeFromCart: (state, { payload }) => {
       let newCart = state.cart.filter((item) => item.id !== payload);
       return { ...state, cart: newCart };
     },
+    // Reducer to handle amount of item inside cart
     handleItemAmount: (state, { payload }) => {
       const { value, id } = payload;
       state.cart.find((item) => item.id == id).amount = value;
     },
+    // Reducer to calculate and return final amount to pay
     setCart: (state) => {
       const subtotal = () => {
         let totalSum = 0;
@@ -49,6 +53,7 @@ const cartSlice = createSlice({
       };
       return { ...state, subtotal: subtotal() };
     },
+    // Reducer to calculate amount of all items in cart
     setItemsInCart: (state) => {
       const itemsAmount = () => {
         let totalItems = 0;
@@ -60,6 +65,7 @@ const cartSlice = createSlice({
       };
       return { ...state, itemsInCart: itemsAmount() };
     },
+    // Reducer to create final order with all necessary information
     setFinalOrder: (state, { payload }) => {
       const newFinalOrder = {
         orderInformation: payload,
@@ -68,6 +74,7 @@ const cartSlice = createSlice({
       };
       return { ...state, finalOrder: newFinalOrder };
     },
+    // Reducer to clear all items and reset cart
     resetState: (state) => {
       localStorage.removeItem("cart");
       return {

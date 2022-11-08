@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import FormWrapper from "../assets/wrappers/PersonalInformationForm";
 import { CheckoutButton } from "../assets/wrappers/Buttons";
 import { useFormik } from "formik";
@@ -14,6 +13,7 @@ const PersonalInformationForm = () => {
 
   const { subtotal, itemsInCart, cart } = useSelector((store) => store.cart);
 
+  // Formik is used to validate and submit the form about users information
   const formik = useFormik({
     initialValues: {
       name: "",

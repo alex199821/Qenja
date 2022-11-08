@@ -10,15 +10,19 @@ import { getLandingPage } from "../features/ui/uiSlice";
 const Landing = () => {
   const dispatch = useDispatch();
 
+  // Fetch and load landing page info when page is opened
   useEffect(() => {
     dispatch(getLandingPage());
-  }, []);
+  }, [dispatch]);
 
   const { landingIsLoading, landingPage } = useSelector((store) => store.ui);
+
+  // Return loading until data is fetched and loaded
   if (landingIsLoading) {
     return <Loading />;
   }
 
+  // Destructuring of landing page data
   const {
     landingUpperCoverImage,
     landingUpperCoverText,

@@ -19,10 +19,11 @@ function App() {
     document.body.style.overflow = "hidden";
   }, []);
 
+  // Dispatch to reducer to get all products list
   useEffect(() => {
     dispatch(getAllProducts());
-  }, []);
-  
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
       <Routes>

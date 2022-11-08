@@ -9,6 +9,7 @@ const Filters = () => {
     (store) => store.products
   );
 
+  //Dispatch to get all filter types
   useEffect(() => {
     dispatch(setFilterOptions());
   }, [productsList, dispatch]);

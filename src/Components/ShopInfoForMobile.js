@@ -23,7 +23,7 @@ const ShopInfoForMobile = () => {
           </p>
           <p className="longDescription">{shopMobileViewNormalText}</p>
         </div>
-        <img src={shopMobileViewImage} alt="Qenja Products" />
+        <img src={shopMobileViewImage} alt="Qenja Products" className="mobileShopInfoImage"/>
       </Wrapper>
     );
   }

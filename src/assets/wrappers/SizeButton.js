@@ -19,5 +19,10 @@ const Wrapper = styled.section`
     border: none;
     background-color: var(--green);
   }
+  @media (max-width: 769px) {
+    .sizeButton{
+      margin-left: 8px;
+    }
+  }
 `;
 export default Wrapper;

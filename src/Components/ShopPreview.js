@@ -7,8 +7,11 @@ import readMoreArrow from "../assets/images/readMoreArrow.png";
 
 const ShopPreview = () => {
   const { productsList } = useSelector((store) => store.products);
+  //Display minimum of 2 items on shop preview
   const [itemCount, setItemCount] = useState(2);
   const [fullListShown, setFullListShown] = useState(false);
+
+  //Display more products on click
   const showMoreProducts = () => {
     if (itemCount < 5) {
       let newItemCount = itemCount + 2;
@@ -16,6 +19,7 @@ const ShopPreview = () => {
     }
   };
 
+  //If more then 5 items shown on shop preview then refer user to shop for more
   useEffect(() => {
     if (itemCount > 5) {
       setFullListShown(true);

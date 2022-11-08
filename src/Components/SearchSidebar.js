@@ -8,6 +8,7 @@ const SearchSidebar = () => {
   const dispatch = useDispatch();
   const { searchSidebarOpen } = useSelector((store) => store.ui);
 
+  //On Click close search sidebar
   const handleCloseSearchSidebar = () => {
     dispatch(closeSearchSidebar());
   };

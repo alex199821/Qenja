@@ -106,7 +106,7 @@ const Wrapper = styled.section`
     .productImage {
       margin: 0;
       width: 100%;
-      height: 200px;
+      height: calc(100vw * 0.66);
     }
     .productPurchaseContainer {
       display: none;

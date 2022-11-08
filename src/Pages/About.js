@@ -8,16 +8,19 @@ import { useDispatch, useSelector } from "react-redux";
 const About = () => {
   const dispatch = useDispatch();
 
+  // Dispatch to reducer to get all contents of About Page
   useEffect(() => {
     dispatch(getAboutPage());
-  }, []);
+  }, [dispatch]);
 
   const { aboutPage, aboutIsLoading } = useSelector((store) => store.ui);
 
+  // Return loading until all data of About Page is recieved
   if (aboutIsLoading) {
     return <Loading />;
   }
 
+  // Destructuring of all contents of About page
   const {
     mainAboutSectionDescription: { standardText, textUnderlined },
     mainAboutSectionHeader,

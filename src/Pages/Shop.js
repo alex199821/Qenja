@@ -18,10 +18,13 @@ const Shop = () => {
   );
 
   const { shop, shopIsLoading } = useSelector((store) => store.ui);
+
+  // Dispatch to get all Shop Page info and data
   useEffect(() => {
     dispatch(getShop());
-  }, []);
+  }, [dispatch]);
 
+  // Return loading until all page data is loading
   if (shopIsLoading || isLoading) {
     return <Loading />;
   }

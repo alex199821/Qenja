@@ -1,5 +1,6 @@
 import { Wrapper } from "../assets/wrappers/IncrementContainer";
 const IncrementerContainer = ({ onChange, value, className }) => {
+  //Function to handle amount change on increment container
   const handleAmount = (e) => {
     let type = e.target.value;
     if (type === "inc") {

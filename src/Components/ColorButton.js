@@ -8,6 +8,7 @@ const ColorButton = ({ color, onChange, value }) => {
     onChange(e);
   };
 
+  //Function to uncheck all colors if they are not chosen one
   useEffect(() => {
     if (color !== value) {
       setChecked(false);

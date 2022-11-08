@@ -3,7 +3,10 @@ import Wrapper from "../assets/wrappers/Product";
 import { Link } from "react-router-dom";
 
 const SingleProduct = ({ data, className }) => {
+  // Destructuring of single product
   const { name, description, image, price, id } = data;
+
+  // Parts of page which are only visible on mobile phones
   const [mobileInfoVisible, setMobileInfoVisible] = useState(false);
   const toggleVisibility = () => {
     setMobileInfoVisible(!mobileInfoVisible);

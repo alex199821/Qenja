@@ -8,6 +8,7 @@ const FilterButton = ({ name, value }) => {
 
   const dispatch = useDispatch();
 
+  //Function to control that only selected filters are visually highlighted
   useEffect(() => {
     if (selectedFilters.indexOf(value) > -1) {
       setChecked(true);
@@ -16,6 +17,7 @@ const FilterButton = ({ name, value }) => {
     }
   }, [selectedFilters, value]);
 
+  //Function to handle fiter on click, by setting opposite value of checked (set false if was checked and now is unchecked for example)
   const handleFilter = (e) => {
     let value = e.target.value;
     let selected = !checked;

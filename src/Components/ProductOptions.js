@@ -129,12 +129,3 @@ const ProductOptions = ({ product }) => {
   );
 };
 export default ProductOptions;
-
-// id: id,
-// name: name,
-// color: null,
-// size: null,
-// amount: 1,
-// price: price,
-
-//      dispatch(addToCart(productParameters));

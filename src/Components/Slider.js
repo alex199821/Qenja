@@ -6,6 +6,8 @@ import { Carousel } from "react-responsive-carousel";
 const Slider = ({ product }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const { image, additionalImages } = product;
+
+  //Slider uses Carousel library
   return (
     <SliderWrapper>
       <Carousel

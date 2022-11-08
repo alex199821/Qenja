@@ -7,12 +7,16 @@ import { removeFromCart } from "../features/cart/cartSlice";
 import { handleItemAmount } from "../features/cart/cartSlice";
 const ProductInCart = ({ data }) => {
   const dispatch = useDispatch();
+
+  //Destructuring of single item data in cart
   const { id, name, image, price, amount } = data;
 
+  //Dispatch to remove item from cart
   const handleRemove = () => {
     dispatch(removeFromCart(id));
   };
 
+  //Dispatch to manage amounts of item in cart
   const handleAmount = (value) => {
     dispatch(handleItemAmount({ value, id }));
   };

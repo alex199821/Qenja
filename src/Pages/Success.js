@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { resetState } from "../features/cart/cartSlice";
 const Success = () => {
   const dispatch = useDispatch();
-
+  //If this page is opened all user info and orders should be reset
   useEffect(() => {
     dispatch(resetState());
   }, []);

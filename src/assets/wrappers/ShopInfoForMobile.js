@@ -40,6 +40,10 @@ const Wrapper = styled.section`
       z-index: -1;
     }
   }
+  .mobileShopInfoImage{
+    width: 100%;
+    height: calc(100vw*0.71);
+  }
   @media (max-width: 769px) {
     display: flex;
   }

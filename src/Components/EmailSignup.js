@@ -2,6 +2,7 @@ import { EmailSignupWrapper } from "../assets/wrappers/Components";
 import emailArrow from "../assets/images/emailArrow.png";
 
 const EmailSignup = () => {
+  //Email subscribe form on the bottom of landing page
   return (
     <EmailSignupWrapper>
       <div>

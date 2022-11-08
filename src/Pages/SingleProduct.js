@@ -10,11 +10,14 @@ import { useEffect } from "react";
 const SingleProduct = () => {
   let { id } = useParams();
 
+  // When new product is opened move to start of page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
   const { productsList } = useSelector((store) => store.products);
-  let product = productsList.filter((product) => product.id == id)[0];
+
+  // Get chosen product from Products List
+  let product = productsList.filter((product) => product.id === id)[0];
 
   return (
     <Wrapper>

@@ -9,10 +9,10 @@ const initialState = {
   isLoading: false,
 };
 
+// Thunk for fetching all products list
 export const getAllProducts = createAsyncThunk(
   "allProducts/getProducts",
   async (_, thunkAPI) => {
-    // const { name, type, descripton } = thunkAPI.getState().getProducts;
     let url = `/products`;
     try {
       const resp = await customFetch.get(url, {});
@@ -26,6 +26,7 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+    // Reducer to create types in filter
     setFilterOptions: (state) => {
       let filterAr = [];
       state.productsList.map((product) => {
@@ -36,9 +37,11 @@ const productsSlice = createSlice({
         filterTypes: initialState.filterTypes.concat([...new Set(filterAr)]),
       };
     },
+    // Reducer to set what will be searched in search graph
     setSearchValue: (state, { payload }) => {
       return { ...state, searchValue: payload };
     },
+    // Reducer to return products list which is filtered via values in search graph
     filterBySearch: (state, { payload }) => {
       let filteredList = state.productsList.filter(
         (data) =>
@@ -48,6 +51,7 @@ const productsSlice = createSlice({
       );
       return { ...state, filteredProductsList: filteredList };
     },
+    // Reducer to filter products list via filter types
     filterProducts: (state, { payload: { selected, value } }) => {
       if (selected && value !== "ALL") {
         let selectedFiltersAr = state.selectedFilters

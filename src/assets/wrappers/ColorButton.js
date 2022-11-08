@@ -13,5 +13,11 @@ const Wrapper = styled.div`
   .colorButtonSelected {
     box-shadow: 0px 0px 0px 2px var(--primary), 0px 0px 0px 3px white;
   }
+  
+  @media (max-width: 769px) {
+    .colorButton {
+      margin-left: 8px;
+    }
+  }
 `;
 export default Wrapper;

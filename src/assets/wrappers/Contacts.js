@@ -37,7 +37,7 @@ const Wrapper = styled.section`
     .socialMediaLinksContainer {
       display: flex;
       flex-direction: row;
-      gap: 1.5rem !important;
+      /* gap: 1.5rem !important; */
     }
     .linkIcon {
       width: 35px;
@@ -47,6 +47,7 @@ const Wrapper = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0px 12px;
       img {
         width: auto;
         height: 50%;

@@ -4,7 +4,6 @@ import NavSidebar from "./NavSidebar";
 import SearchSidebar from "./SearchSidebar";
 import Wrapper from "../assets/wrappers/Header";
 import Logo from "../assets/images/Logo.png";
-import LanguageSelect from "./LanguageSelect";
 import { BurgerButton } from "../assets/wrappers/Buttons";
 import { LogoSection, SearchBar } from "../assets/wrappers/Components";
 import {
@@ -28,14 +27,17 @@ const Header = () => {
   const { cart, itemsInCart } = useSelector((store) => store.cart);
   const { searchValue } = useSelector((store) => store.products);
 
+  //On click open Navigation side bar for mobile
   const handleOpenNavSidebar = () => {
     dispatch(openNavSidebar());
   };
 
+  //On click open Search side bar for mobile
   const handleOpenSearchSidebar = () => {
     dispatch(openSearchSidebar());
   };
 
+  //Function to handle whole search section with following logic - on first char typed navigate to shop and when no chats are left in search navigate back to the old page
   const handleSearch = (e) => {
     let search = e.target.value;
     dispatch(setSearchValue(e.target.value));
@@ -48,10 +50,12 @@ const Header = () => {
     }
   };
 
+  //Dispatch to get all data for contact page
   useEffect(() => {
     dispatch(getContacts());
   }, []);
 
+  //Reset all search data every time user changes the page
   useEffect(() => {
     if (searchValue.length > 0 && path !== "/shop/") {
       dispatch(setSearchValue(""));
@@ -59,6 +63,7 @@ const Header = () => {
     }
   }, [path, dispatch]);
 
+  //Dispatch to filter shop by search query
   useEffect(() => {
     dispatch(filterBySearch(searchValue));
   }, [searchValue, dispatch]);
